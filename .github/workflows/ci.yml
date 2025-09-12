@@ -10,7 +10,7 @@ jobs:
     if: ${{ github.event_name == 'pull_request'}}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v5
       - uses: ahmadnassri/action-dependabot-auto-merge@v2
         with:
           target: minor
@@ -19,8 +19,8 @@ jobs:
     name: check
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/cache@v3
+      - uses: actions/checkout@v5
+      - uses: actions/cache@v4
         with:
           path: |
             ~/.cargo/bin/
@@ -42,8 +42,8 @@ jobs:
     name: todos
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/cache@v3
+      - uses: actions/checkout@v5
+      - uses: actions/cache@v4
         with:
           path: |
             ~/.cargo/bin/
@@ -71,8 +71,8 @@ jobs:
     name: test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/cache@v3
+      - uses: actions/checkout@v5
+      - uses: actions/cache@v4
         with:
           path: |
             ~/.cargo/bin/
@@ -94,8 +94,8 @@ jobs:
     name: coverage
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/cache@v3
+      - uses: actions/checkout@v5
+      - uses: actions/cache@v4
         with:
           path: |
             ~/.cargo/bin/
@@ -112,14 +112,14 @@ jobs:
       - run: cargo install cargo-tarpaulin || true
       - run: cargo tarpaulin --verbose --all-features --workspace --timeout 120 --out xml
       - name: Upload to codecov.io
-        uses: codecov/codecov-action@v1
+        uses: codecov/codecov-action@v5
 
   fmt:
     name: rustfmt
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/cache@v3
+      - uses: actions/checkout@v5
+      - uses: actions/cache@v4
         with:
           path: |
             ~/.cargo/bin/
@@ -143,8 +143,8 @@ jobs:
     name: clippy
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/cache@v3
+      - uses: actions/checkout@v5
+      - uses: actions/cache@v4
         with:
           path: |
             ~/.cargo/bin/
