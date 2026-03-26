@@ -112,7 +112,7 @@ jobs:
       - run: cargo install cargo-tarpaulin || true
       - run: cargo tarpaulin --verbose --all-features --workspace --timeout 120 --out xml
       - name: Upload to codecov.io
-        uses: codecov/codecov-action@v5
+        uses: codecov/codecov-action@v6
 
   fmt:
     name: rustfmt
